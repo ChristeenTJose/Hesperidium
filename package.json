@@ -1,0 +1,28 @@
+{
+  "name": "hesperidium",
+  "version": "1.0.0",
+  "description": "Can you correctly identify all the berries?",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristeenTJose/Hesperidium.git"
+  },
+  "keywords": [
+    "Hesperidium",
+    "game"
+  ],
+  "author": "Christeen T Jose",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ChristeenTJose/Hesperidium/issues"
+  },
+  "homepage": "https://github.com/ChristeenTJose/Hesperidium#readme",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
