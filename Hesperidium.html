@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Hesperidium game
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/styling.css">
+		<script>
+			sessionStorage.setItem('Counter','0');
+			sessionStorage.setItem('Score','0');
+			sessionStorage.setItem('1','Grape');
+			sessionStorage.setItem('2','Orange');
+			sessionStorage.setItem('3','Apple');
+			sessionStorage.setItem('4','Watermelon');
+			sessionStorage.setItem('5','Avocado');
+			sessionStorage.setItem('6','Pear');
+			sessionStorage.setItem('7','Banana');
+			sessionStorage.setItem('8','Blueberry');
+			sessionStorage.setItem('9','Cranberry');
+			sessionStorage.setItem('10','Tomatoe');
+			sessionStorage.setItem('11','Blackberry');
+			sessionStorage.setItem('12','Pineapple');
+			sessionStorage.setItem('13','Coffee berry');
+			sessionStorage.setItem('14','Raspberry');
+			sessionStorage.setItem('15','Lime');
+			sessionStorage.setItem('16','Papaya');
+			sessionStorage.setItem('17','Cherry');
+			sessionStorage.setItem('18','Cucumber');
+			sessionStorage.setItem('19','Cantaloupe');
+			sessionStorage.setItem('20','Almond');
+			sessionStorage.setItem('21','Pumpkin');
+			sessionStorage.setItem('22','Lemon');
+			sessionStorage.setItem('23','Strawberry');
+			function Game() 
+			{
+ 				var container=document.getElementById('Container');
+ 				var previous=sessionStorage.getItem('Counter');
+ 				sessionStorage.setItem('Counter',parseInt(sessionStorage.getItem('Counter'))+1);
+ 				if(sessionStorage.getItem('Counter')==1)
+ 				{
+ 					var button=document.getElementById('StartButton');
+ 					button.innerHTML="Skip";
+ 					var container3=document.getElementById('Container3');
+ 					container3.innerHTML="<button id='BerryButton1' class='BerryButtons' onclick='ScoreB()'>Berry</button><button id='BerryButton2' class='BerryButtons' onclick='ScoreNB()'>Not a Berry</button><br>Score: "+sessionStorage.getItem('Score');
+ 				}
+ 				if(sessionStorage.getItem('Counter')==24)
+ 				{
+ 					var button=document.getElementById('StartButton');
+ 					container.innerHTML="<h1>Hesperidium</h1>";
+ 					container.style.backgroundImage ="url(images/Hesperidium.jpg)";
+ 					button.innerHTML="Start again";
+ 					sessionStorage.setItem('Counter',0);
+ 					var container3=document.getElementById('Container3');
+ 					container3.innerHTML="<br>Your final Score: "+sessionStorage.getItem('Score')+"/23";
+ 					sessionStorage.setItem('Score',0);
+ 				}
+ 				else
+ 				{
+					var name='images/H';
+ 					name+=sessionStorage.getItem('Counter');
+ 					name+='.jpg';
+ 					container.style.backgroundImage ="url("+name+")";	
+ 					container.innerHTML="<h1>"+sessionStorage.getItem(sessionStorage.getItem('Counter'))+"</h1>";
+ 					var container3=document.getElementById('Container3');
+ 					var a=previous;
+ 					if(a==0)
+ 					{
+ 						container3.innerHTML="<button id='BerryButton1' class='BerryButtons' onclick='ScoreB()'>Berry</button><button id='BerryButton2' class='BerryButtons' onclick='ScoreNB()'>Not a Berry</button><br>Score: "+sessionStorage.getItem('Score');
+ 					}
+ 					else if(a=='3'||a=='6'||a=='11'||a=='12'||a=='14'||a=='17'||a=='20'||a=='23')
+ 					{
+ 						container3.innerHTML="<button id='BerryButton1' class='BerryButtons' onclick='ScoreB()'>Berry</button><button id='BerryButton2' class='BerryButtons' onclick='ScoreNB()'>Not a Berry</button><br>Score: "+sessionStorage.getItem('Score')+"<br><br>("+sessionStorage.getItem(previous)+" is not a berry)";
+ 					}
+ 					else
+ 					{
+ 						container3.innerHTML="<button id='BerryButton1' class='BerryButtons' onclick='ScoreB()'>Berry</button><button id='BerryButton2' class='BerryButtons' onclick='ScoreNB()'>Not a Berry</button><br>Score: "+sessionStorage.getItem('Score')+"<br><br>("+sessionStorage.getItem(previous)+" is a berry)";
+ 					}
+ 				}
+			}
+			function Welcome()
+			{
+				var container=document.getElementById('Container');
+				container.style.backgroundImage ="none";
+				if(sessionStorage.getItem('Counter')=='0')
+				{
+					container.innerHTML=container.innerHTML+"<h2>Can you correctly identify all the berries?<h2>";	
+				}
+			}
+			function Welcome2()
+			{
+				var container=document.getElementById('Container');
+				var name='images/H';
+				if(sessionStorage.getItem('Counter')=='0')
+				{
+					container.innerHTML="<h1>Hesperidium</h1>";
+					name+='esperidium';
+				}
+				else
+				{
+					name+=sessionStorage.getItem('Counter');
+				}
+				name+='.jpg';
+ 				container.style.backgroundImage ="url("+name+")";
+			}
+			function ScoreB()
+			{
+				var a=sessionStorage.getItem('Counter');
+				if(a!=='3'&&a!=='6'&&a!=='11'&&a!=='12'&&a!=='14'&&a!=='17'&&a!=='20'&&a!=='23')
+				{
+	
+					sessionStorage.setItem('Score',parseInt(sessionStorage.getItem('Score'))+1);
+				}
+				Game();
+			}
+			function ScoreNB()
+			{
+				var a=sessionStorage.getItem('Counter');
+				if(a=='3'||a=='6'||a=='11'||a=='12'||a=='14'||a=='17'||a=='20'||a=='23')
+				{
+	
+					sessionStorage.setItem('Score',parseInt(sessionStorage.getItem('Score'))+1);
+				}
+				Game();
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<div id="Container" onmouseenter="Welcome()" onmouseleave="Welcome2()">
+				<h1>Hesperidium</h1>
+			</div>
+		</header>
+		<div id="Container2"><button id="StartButton" onclick="Game()">Start</button></div>
+		<div id="Container3"></div>
+	</body>
+</html>
