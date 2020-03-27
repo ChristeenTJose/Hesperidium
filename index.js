@@ -91,7 +91,6 @@ http.createServer(
 		}
 	}
 ).listen(5000);
-console.log('server running at http://localhost:5000');
 function getfilecontent(response,filepath,ContentType)
 {
 	fs.readFile(filepath,function(error,data)
