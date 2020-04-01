@@ -93,7 +93,7 @@ http.createServer(
 		}
 	}
 ).listen(5000);
-console.log(__dirname);
+console.log('Directory: '+__dirname);
 console.log('Website is up and running at: http://localhost:5000/');
 function getfilecontent(response,filepath,ContentType)
 {
