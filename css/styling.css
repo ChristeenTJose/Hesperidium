@@ -76,7 +76,6 @@ div
 {
 	background-color: white;
 	color: black;
-	width: 10%;
 	padding: 30px;
 	border-radius: 40%;
 }
@@ -92,4 +91,82 @@ div
 {
 	background-color: black;
 	color: white;
+}
+@media screen and (max-height: 320px)
+{
+	h1
+	{
+		font-size: 40px;
+	}
+	#Container
+	{
+    	width: 50%;
+    	height: 100px;
+    	padding-top: 0px;
+    	padding-bottom: 10px;
+	}
+	#BerryButton1
+	{
+		padding: 25px;;
+	}
+	#BerryButton2
+	{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	#StartButton
+	{
+		padding: 20px;
+		text-align: center;
+	}
+	#Container2
+	{
+  		margin-top: 1px;
+	}
+	#Container3
+	{
+		font-size: 15px;
+	}
+}
+@media screen and (max-width: 600px) and (min-height: 320px)
+{
+	h1
+	{
+		font-size: 40px;
+	}
+	#Container
+	{
+    	width: 100%;
+    	height: 180px;
+    	padding-top: 0px;
+    	padding-bottom: 10px;
+	}
+	#BerryButton1
+	{
+		padding: 30px;
+		font-size: 10px;
+	}
+	#BerryButton2
+	{
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-right: 15px;
+		padding-left: 15px;
+		font-size: 10px;
+	}
+	#StartButton
+	{
+		padding: 20px;
+		text-align: center;
+	}
+	#Container2
+	{
+  		margin-top: 2vh;
+	}
+	#Container3
+	{
+		font-size: 15px;
+	}
 }

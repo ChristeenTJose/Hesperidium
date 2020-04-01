@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 		<title>Hesperidium game
 		</title>
 		<link rel="stylesheet" type="text/css" href="css/styling.css">
@@ -51,7 +52,7 @@
  					button.innerHTML="Start again";
  					sessionStorage.setItem('Counter',0);
  					var container3=document.getElementById('Container3');
- 					container3.innerHTML="<br>Your final Score: "+sessionStorage.getItem('Score')+"/23";
+ 					container3.innerHTML="<br>Your final Score: "+sessionStorage.getItem('Score')+"/23"+"<br><br>("+sessionStorage.getItem(previous)+" is not a berry)";
  					sessionStorage.setItem('Score',0);
  				}
  				else
