@@ -6,13 +6,14 @@ http.createServer(
 		var url=request.url;
 		var image='images/H';
 		var path = require('path');
+		console.log('Requested: '+url);
 		switch(url)
 		{
 			case '/':
 				getfilecontent(response,path.join('Hesperidium.html'),'text/html');
 				break;
 			case '/css/styling.css':
-				getfilecontent(response,path.join('css/styling.css'),'text/css');
+				getfilecontent(response,path.join('css','styling.css'),'text/css');
 				break;
 			case '/'+image+'esperidium'+'.jpg':
 				getfilecontent(response,path.join(image+'esperidium'+'.jpg'),'image/jpg');
@@ -92,8 +93,8 @@ http.createServer(
 		}
 	}
 ).listen(5000);
-console.log(__dirname)
-console.log('Website is up and running at: http://localhost:5000/')
+console.log(__dirname);
+console.log('Website is up and running at: http://localhost:5000/');
 function getfilecontent(response,filepath,ContentType)
 {
 	fs.readFile(filepath,function(error,data)
